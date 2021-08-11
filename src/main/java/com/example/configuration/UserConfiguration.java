@@ -1,4 +1,4 @@
-package com.example;
+package com.example.configuration;
 
 import com.example.entity.User;
 import org.springframework.context.annotation.Bean;
