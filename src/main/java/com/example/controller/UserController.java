@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
-public class PublicController {
+public class UserController {
     @Autowired
     private UserRepository userRepository;
 
@@ -33,21 +33,16 @@ public class PublicController {
         return userRepository.findById(id);
     }
 
-    @GetMapping("/update")
-    public User update(User user) {
-        return userRepository.update(user);
-    }
+//    @GetMapping("/update")
+//    public User update(User user) {
+//        return userRepository.update(user);
+//    }
 
-//    @GetMapping("/update/{id}/{name}")
-//    public User update(@PathVariable("id") final String id,
-//                       @PathVariable("name") final String name) {
-//        userRepository.update(new User(id, name, 1000L));
-//        return userRepository.findById(id);
-//    }
-//
-//    @GetMapping("/delete/{id}")
-//    public Map<String, User> delete(@PathVariable("id") final String id) {
-//        userRepository.delete(id);
-//        return all();
-//    }
+
+
+    @DeleteMapping("/delete/{id}")
+    public String delete(@PathVariable("id") long id) {
+        userRepository.deleteUser(id);
+        return "Deleted Successfully " + id;
+    }
 }

@@ -44,13 +44,14 @@ public class UserRepository {
 
     //update an user
 
-    public User update(User user) {return addUser(user);
+    public User update(User user) { return addUser(user);
     }
 
     //delete an user
 
     public void deleteUser(long id) {
 
-      hashOperations.delete(KEY,id);
+       hashOperations.delete(KEY,id);
+
     }
 }
